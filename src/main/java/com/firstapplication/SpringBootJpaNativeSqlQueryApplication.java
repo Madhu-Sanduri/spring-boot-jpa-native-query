@@ -13,11 +13,14 @@ public class SpringBootJpaNativeSqlQueryApplication {
 		ConfigurableApplicationContext container=SpringApplication.run(SpringBootJpaNativeSqlQueryApplication.class, args);
 		
 		EmployeeDBOperations demo= container.getBean(EmployeeDBOperations.class);
+		//demo.addEmployees();
 		demo.getAllEmployees();
 		
 		demo.getEmployeesByCity();
 		
 		demo.getEmployeesByConditions();
+		
+		demo.getEmployeesNameParameters();
 		
 	}
 
