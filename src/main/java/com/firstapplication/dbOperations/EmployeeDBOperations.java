@@ -1,5 +1,6 @@
 package com.firstapplication.dbOperations;
 
+import java.util.Comparator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,15 @@ public class EmployeeDBOperations {
 		List<EmployeeEntity> listEmpCity= employeeRepo.getEmployeeByCity("I");
 		
 		listEmpCity.stream()
+		.forEach(System.out::println);
+	}
+	
+	
+	public void getEmployeesByConditions() {
+		List<EmployeeEntity> list2= employeeRepo.getEmployeeByGender_Age("M", 30);
+		
+		list2.stream()
+		.sorted(Comparator.comparing(emp -> emp.getAge()))
 		.forEach(System.out::println);
 	}
 

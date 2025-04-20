@@ -20,4 +20,7 @@ public interface EmployeeRepo extends JpaRepository<EmployeeEntity, Integer> {
 	@Query(value="select * from employees_data ed where ed.country like ?1% " ,nativeQuery = true)
 	List<EmployeeEntity> getEmployeeByCity(String city);
 	
+	@Query(value="select * from employees_data ed where ed.gender like ?1 and ed.age> ?2", nativeQuery = true)
+	List<EmployeeEntity> getEmployeeByGender_Age(String gender, int age);
+	
 }
