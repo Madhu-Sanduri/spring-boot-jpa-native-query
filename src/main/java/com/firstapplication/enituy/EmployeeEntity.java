@@ -3,6 +3,7 @@ package com.firstapplication.enituy;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -16,6 +17,7 @@ public class EmployeeEntity {
 	
 	
 	@Id
+//	@Column(name="eId")
 	private int employeeId;
 	
 	private String name;
@@ -28,6 +30,8 @@ public class EmployeeEntity {
 	
 	private String country;
 	
+//	@Column(name="mail")
+//	private String eMail;
 	
 
 	public EmployeeEntity() {
@@ -42,6 +46,7 @@ public class EmployeeEntity {
 		this.city = city;
 		this.gender = gender;
 		this.country = country;
+		
 	}
 	
 	
